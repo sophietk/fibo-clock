@@ -1,5 +1,5 @@
 const chai = require('chai')
-const objects = require('../lib/index.js').objects
+const objects = require('../lib').objects
 const ClockElement = objects.ClockElement
 
 chai.should()
