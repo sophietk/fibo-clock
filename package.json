@@ -1,7 +1,7 @@
 {
   "name": "fibo-clock",
   "version": "1.0.0",
-  "description": "Fibonacci clock implementation",
+  "description": "A js implementation to render a Fibonacci clock",
   "main": "index.js",
   "scripts": {
     "start": "open app/index.html",
