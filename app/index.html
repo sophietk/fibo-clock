@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Fibo clock</title>
+  </head>
+  <style media="screen">
+  .fc-element {
+    display: inline-block;
+    position: absolute;
+    border: 1px solid grey;
+  }
+  .fc-element--1 {
+    width: 100px;
+    height: 100px;
+  }
+  .fc-element--2 {
+    width: 200px;
+    height: 200px;
+  }
+  .fc-element--3 {
+    width: 300px;
+    height: 300px;
+  }
+  .fc-element--5 {
+    width: 500px;
+    height: 500px;
+  }
+
+  .fc-element:nth-child(1) {
+    top: 100px;
+    left: 200px;
+  }
+  .fc-element:nth-child(2) {
+    top: 0;
+    left: 200px;
+  }
+  .fc-element:nth-child(3) {
+    top: 0;
+    left: 0;
+  }
+  .fc-element:nth-child(4) {
+    top: 200px;
+    left: 0;
+  }
+  .fc-element:nth-child(5) {
+    top: 0;
+    left: 300px;
+  }
+
+  </style>
+  <body>
+
+    <div class="fc">
+      <div class="fc-element fc-element--1"></div>
+      <div class="fc-element fc-element--1"></div>
+      <div class="fc-element fc-element--2"></div>
+      <div class="fc-element fc-element--3"></div>
+      <div class="fc-element fc-element--5"></div>
+    </div>
+
+    <script src="../lib/index.js"></script>
+    <script>
+    nextTick()
+
+    function nextTick() {
+      displayClock()
+      setTimeout(nextTick, 60000)
+    }
+
+    function displayClock() {
+      const elements = fiboClock.getClockForTime(new Date())
+      for (index in elements) {
+        const elementColor = elements[index]
+        document.getElementsByClassName('fc')[0].children[index].style.backgroundColor = elementColor;
+      }
+    }
+    </script>
+
+  </body>
+</html>

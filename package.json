@@ -4,6 +4,7 @@
   "description": "Fibonacci clock implementation",
   "main": "index.js",
   "scripts": {
+    "start": "open app/index.html",
     "test": "mocha test"
   },
   "repository": {
